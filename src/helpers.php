@@ -6,10 +6,12 @@ if (!function_exists('base_path')) {
 
     function base_path(string $path = ''): string
     {
-        return dirname(__DIR__, 1) . '/' . $path;
+        return dirname(__DIR__, 1) . DIRECTORY_SEPARATOR . $path;
     }
 
 }
+
+
 
 if (!function_exists('mix')) {
 
@@ -23,6 +25,15 @@ if (!function_exists('mix')) {
         $content = json_decode($content, true);
         
         return $content[$path] ?? $path;
+    }
+
+}
+
+if (!function_exists('resource_path')) {
+
+    function resource_path(string $path = ''): string
+    {
+        return base_path('resources/' . DIRECTORY_SEPARATOR . $path);
     }
 
 }
