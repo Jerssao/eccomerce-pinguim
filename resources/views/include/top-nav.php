@@ -1,14 +1,4 @@
-<!DOCTYPE html>
-<html lang="en" class="h-full bg-gray-100">
-
-<head>
-    <?php include __DIR__ . '/include/head.phtml'; ?>
-
-</head>
-
-<body class="h-full">
-    <div class="min-h-full">
-        <nav class="bg-gray-800">
+<nav class="bg-gray-800">
             <div class="mx-auto  max-w-7xl px-4">
 
                 <div class="flex items-center justify-start gap-4 h-16">
@@ -24,19 +14,3 @@
 
             </div>
         </nav>
-
-        <header class="bg-white shadow">
-            <div class="mx-auto  max-w-7xl px-8 py-6">
-                <h1 class="text-3xl leading-9 font-bold text-gray-900">Home</h1>
-            </div>
-        </header>
-
-        <main>
-            <div class="mx-auto  max-w-7xl px-8 py-6" style="padding: 2rem 0;">
-                <?php mix('css/app.css') ?>
-            </div>
-        </main>
-    </div> 
-</body>
-
-</html>

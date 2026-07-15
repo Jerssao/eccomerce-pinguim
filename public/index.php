@@ -10,5 +10,6 @@ $products = Products::all();
 $produtosFiltrados = array_filter($products, static fn(array $product) => $product['is_available']);
 
 $title = 'My WebStore';
+$heading = 'Home';
 
-require __DIR__ . '/../resources/views/index.phtml';
+require __DIR__ . '/../resources/views/index.php';
