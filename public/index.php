@@ -1,15 +1,21 @@
 <?php
 
 declare(strict_types=1);
-use App\Models\Products;
-//require __DIR__ . '/Products.php';
+
 require __DIR__ . '/../vendor/autoload.php';
-//vai dar merda no autoload.php mas depois eu arrumo, só quero mostrar a ideia de separar a lógica da view
-$products = Products::all();
 
-$produtosFiltrados = array_filter($products, static fn(array $product) => $product['is_available']);
+$uri = $_SERVER['REQUEST_URI'];
 
-$title = 'My WebStore';
-$heading = 'Home';
+$routes = [
+    '/' => 'home',
+    '/contact' => 'contact',
+];
 
-require __DIR__ . '/../resources/views/index.php';
+if (array_key_exists($uri, $routes)) {
+
+    require base_path('src/Controllers/' . $routes[$uri] . '.php');
+}else {
+    http_response_code(404);
+    require resource_path('views/404.php');
+    die();
+}

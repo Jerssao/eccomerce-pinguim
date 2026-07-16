@@ -37,3 +37,15 @@ if (!function_exists('resource_path')) {
     }
 
 }
+
+if (!function_exists('dd')){
+    
+    function dd(... $args): void
+    {
+        echo "<pre>";
+        foreach ($args as $data) {
+            print_r($data);
+        }
+        die();
+    }
+}
